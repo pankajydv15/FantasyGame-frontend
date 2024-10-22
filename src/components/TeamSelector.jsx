@@ -13,7 +13,7 @@ const TeamSelector = ({ onTeamCreated }) => {
     const fetchTeams = async () => {
       try {
         console.log("Fetching teams...");
-        const response = await axios.get('http://localhost:5000/api/teams');
+        const response = await axios.get('https://fantasygamebackend.onrender.com/api/teams');
         console.log("Teams fetched:", response.data);
         setTeams(response.data);
       } catch (err) {
@@ -30,7 +30,7 @@ const TeamSelector = ({ onTeamCreated }) => {
   // New function to refetch teams
   const refreshTeams = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/teams');
+      const response = await axios.get('https://fantasygamebackend.onrender.com/api/teams');
       setTeams(response.data);
     } catch (err) {
       console.error("Error refreshing teams:", err.message);
