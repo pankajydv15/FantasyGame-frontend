@@ -41,7 +41,7 @@ const TeamSelector = ({ onTeamCreated }) => {
     const teamId = e.target.value;
     if (teamId) {
       try {
-        const response = await axios.get(`http://localhost:5000/api/teams/${teamId}`);
+        const response = await axios.get(`https://fantasygamebackend.onrender.com/api/teams/${teamId}`);
         setSelectedTeam(response.data);
       } catch (err) {
         console.error("Error fetching selected team:", err.message);

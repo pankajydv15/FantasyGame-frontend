@@ -8,7 +8,7 @@ const PlayerForm = ({ onTeamCreated }) => {
 
   useEffect(() => {
     // Fetch players from the backend
-    axios.get('http://localhost:5000/api/players')
+    axios.get('https://fantasygamebackend.onrender.com/api/players')
       .then((response) => {
         setPlayers(response.data);
       })
@@ -37,7 +37,7 @@ const PlayerForm = ({ onTeamCreated }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/teams', {
+      const response = await axios.post('https://fantasygamebackend.onrender.com/api/teams', {
         name: teamName,
         playerIds: selectedPlayers,
       });
